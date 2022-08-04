@@ -257,7 +257,7 @@ const sumList = (head) => {
 //     console.log(array);
 // };
 // const printLList = (head) => {
-//     let values = []; 
+//     let values = [];
 //     fillValues(head, values);
 //     console.log(values);
 // }
@@ -269,3 +269,50 @@ const sumList = (head) => {
 // };
 // printLList(a)
 
+
+function longestWord(sen) {
+    let wordArr = sen.split(" ")
+    let longestWord = ""
+    console.log(wordArr);
+    for (let i = 0; i < wordArr.length; i++) {
+        let elem = wordArr[i];
+        if (elem.length > longestWord.length) {
+            longestWord = elem
+        }
+        
+    }
+    console.log(longestWord);
+}
+
+function chunkArray(arr, len) {
+//     const chunkedArr = []
+//     let i = 0
+//     while (i < arr.length) {
+//         chunkedArr.push(arr.slice(i, i + len));
+//         i += len;
+//     }
+//    console.log(chunkedArr);
+    
+    const chunkedArr = []
+    arr.forEach(function(val) {
+        const last = chunkedArr[chunkedArr.length - 1];
+
+        if (!last || last.length === len) {
+            chunkedArr.push([val])
+        } else {
+            last.push(val);
+        }
+        
+    });
+    console.log(chunkedArr);
+}
+
+function flattenArr(arrays) {
+    // return arrays.reduce(function (a, b) {
+    //     return a.concat(b);
+    // });
+    return [].concat.apply([],arrays);
+}
+
+const output = flattenArr([[1, 2], [3, 4], [5, 6], [7]])
+console.log(output);
