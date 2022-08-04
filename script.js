@@ -147,6 +147,12 @@ class LinkedList{
         }
     }
 }
+function stringToArray(str) {
+    let array = [];
+    array = str.split("");
+    console.log(array);
+}
+stringToArray("Hello There")
 
 function maxChar(word) {
     const charSet = {};
@@ -220,9 +226,6 @@ class Dictionary{
 
 const test = new Dictionary(['cat', 'dog', 'horse']);
 
-console.log(test.isInDict('Cat'));
-console.log(test.isInDict('Pig'));
-
 
 class Mode{
     constructor(val) {
@@ -239,24 +242,30 @@ a.next = b;
 b.next = c;
 c.next = d;
 
-const printLinkedList = (head) => {
-    let array = [];
-    let current = head;
-    while (current !== null) {
-        array.push(current.val)
-        current = current.next
-    }
-    console.log(array);
-};
-const printLList = (head) => {
-  let  array = []
-    if (head == null) return;
-    console.log(head.val);
-    array.push(head.val)
-    console.log(array);
-    printLList(head.next)
+const sumList = (head) => {
+    if (head == null) return 0; 
+    head.val + sumList(head.next)
 }
 
+// const printLinkedList = (head) => {
+//     let array = [];
+//     let current = head;
+//     while (current !== null) {
+//         array.push(current.val)
+//         current = current.next
+//     }
+//     console.log(array);
+// };
+// const printLList = (head) => {
+//     let values = []; 
+//     fillValues(head, values);
+//     console.log(values);
+// }
 
-printLinkedList(a)
+// const fillValues = (head, values) => {
+//     if (head == null) return;
+//     values.push(head.val);
+//     fillValues(head.next, values);
+// };
+// printLList(a)
 
