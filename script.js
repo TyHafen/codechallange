@@ -29,13 +29,13 @@ function anagram(word1, word2) {
         hist[word1[i]]++
         hist[word2[i]]--
     }
-    console.log(hist);
+    
     for (let ch in hist) {
         if(hist[ch] !==0) return false
     }
     return 'WOrds are anagrams'
-
 }
+console.log(anagram("hello", "loleh"));
 
 //reverse integer
 function reverseInteger(num){
@@ -311,8 +311,23 @@ function flattenArr(arrays) {
     // return arrays.reduce(function (a, b) {
     //     return a.concat(b);
     // });
-    return [].concat.apply([],arrays);
+    
+     return [].concat(...arrays)
+  
+}
+function isAnagram(word1, word2) {
+    console.log(formatStr(word1));
+ 
+}
+function formatStr(str) {
+    return str
+        .replace(/[^\w]/g, "")
+        .toLowerCase()
+        .split('')
+        .sort()
+        .join('')
+
 }
 
-const output = flattenArr([[1, 2], [3, 4], [5, 6], [7]])
+const output = isAnagram("elbow", "below")
 console.log(output);
