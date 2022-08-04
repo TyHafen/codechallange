@@ -240,12 +240,23 @@ b.next = c;
 c.next = d;
 
 const printLinkedList = (head) => {
+    let array = [];
     let current = head;
     while (current !== null) {
-        console.log(current.val);
+        array.push(current.val)
         current = current.next
     }
+    console.log(array);
 };
+const printLList = (head) => {
+  let  array = []
+    if (head == null) return;
+    console.log(head.val);
+    array.push(head.val)
+    console.log(array);
+    printLList(head.next)
+}
+
 
 printLinkedList(a)
 
