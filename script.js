@@ -187,3 +187,65 @@ function  smallest(str) {
 }
     let string = "Hello everybody my name is T"
 smallest(string)
+
+let myVerb = "ran"
+let word = "away"
+
+const sent = "I " + myVerb +" " +  word;
+console.log(sent);
+
+
+const myDog  = {
+    "name": "Birdie",
+    "age": 2,
+    "weight": "65 pounds",
+    "enemies": [{ "name": "vacuum", "age": 2 }, {"name": "Mr. BigTail", "age": 3} ]
+        
+
+
+}
+
+
+class Dictionary{
+
+     constructor(wordsArray){
+         this.dict = wordsArray;
+    }
+    
+    isInDict(word) {
+        
+        return this.dict.includes(word.toLowerCase());
+    }
+}
+
+const test = new Dictionary(['cat', 'dog', 'horse']);
+
+console.log(test.isInDict('Cat'));
+console.log(test.isInDict('Pig'));
+
+
+class Mode{
+    constructor(val) {
+        this.val = val;
+        this.next = null;
+    }
+}
+
+const a = new Mode('A');
+const b = new Mode('B');
+const c = new Mode('C');
+const d = new Mode('D');
+a.next = b;
+b.next = c;
+c.next = d;
+
+const printLinkedList = (head) => {
+    let current = head;
+    while (current !== null) {
+        console.log(current.val);
+        current = current.next
+    }
+};
+
+printLinkedList(a)
+
