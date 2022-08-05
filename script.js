@@ -35,7 +35,7 @@ function anagram(word1, word2) {
     }
     return 'WOrds are anagrams'
 }
-console.log(anagram("hello", "loleh"));
+
 
 //reverse integer
 function reverseInteger(num){
@@ -152,7 +152,7 @@ function stringToArray(str) {
     array = str.split("");
     console.log(array);
 }
-stringToArray("Hello There")
+
 
 function maxChar(word) {
     const charSet = {};
@@ -192,13 +192,13 @@ function  smallest(str) {
     console.log(min , max);
 }
     let string = "Hello everybody my name is T"
-smallest(string)
+
 
 let myVerb = "ran"
 let word = "away"
 
 const sent = "I " + myVerb +" " +  word;
-console.log(sent);
+
 
 
 const myDog  = {
@@ -329,5 +329,6 @@ function formatStr(str) {
 
 }
 
-const output = isAnagram("elbow", "below")
-console.log(output);
+
+
+
