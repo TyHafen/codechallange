@@ -361,14 +361,43 @@ var twoSum = function(nums, target){
         } else{ store[cur] = i}
         
     }
-    console.log("final", store);
+
 }
 
 let nums = [2, 7, 13, 15]
 let target = 9
 twoSum(nums, target)
 
-var pivot = function(nums)
+var pivot = function (nums) {
+    let totalSum = 0;
+    let leftSum = 0;
+    nums.forEach((e) => {
+        totalSum +=e
+    })
+    for (let i = 0; i < nums.length; i++){
+        if (totalSum - leftSum - nums[i] ===leftSum) {
+            return i 
+        }
+        leftSum +=nums[i]
+    }
+    return -1
+
+}
+
+function palInt(int) {
+    let reverse = "";
+    let strInt = int.toString()
+    console.log(reverse);
+    for (let i = strInt.length - 1; i >= 0; i--){
+        let char = strInt[i]
+        reverse += char
+    }
+    if (int === parseInt(reverse)){
+        console.log(true);
+    }else  console.log(false);
+}
+
+palInt(12343213)
 
 
 
