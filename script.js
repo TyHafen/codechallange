@@ -329,6 +329,47 @@ function formatStr(str) {
 
 }
 
+function valid(str) {
+    let bracket = {
+        '(': ')',
+        '{': '}',
+        '[':']'
+    }
+    let heap = []
+    for (let char of str) {
+        if (bracket[char]) {
+            console.log("the thing",bracket[char]);
+            heap.push(bracket[char])
+            console.log(heap);
+        } else {
+            if (heap.pop() !== char) console.log(false);
+            console.log(heap);
+        }
+    }
+    console.log(!heap.length);
+}
+
+
+var twoSum = function(nums, target){
+    const store = {};
+
+    for (let i = 0; i <= nums.length; i++){
+        let cur = nums[i];
+        let diff = target - cur
+        if (store[diff] !== undefined) {
+            console.log("hello",[store[diff], i]);
+        } else{ store[cur] = i}
+        
+    }
+    console.log("final", store);
+}
+
+let nums = [2, 7, 13, 15]
+let target = 9
+twoSum(nums, target)
+
+var pivot = function(nums)
+
 
 
 
